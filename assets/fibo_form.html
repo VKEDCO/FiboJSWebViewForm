@@ -1,0 +1,23 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<input type="text" id="textField" />
+		<br />
+		<input type="button" id="button" value="SUBMIT" onclick="submit();" />
+		
+		<script type="text/javascript">
+			<!-- Set the initial value of the text field -->
+			if(window.webViewInterface !== undefined){
+				document.getElementById('textField').value = window.webViewInterface.getFiboN();	
+			}
+			
+			<!-- When a user submits fibonacci_number, report them back to WebViewer.java -->
+			function submit(){
+				if(window.webViewInterface !== undefined){
+					window.webViewInterface.reportFiboN(document.getElementById('textField').value);
+				}
+			}
+		</script>
+	</body>
+</html>
